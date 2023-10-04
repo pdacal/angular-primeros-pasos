@@ -1,0 +1,39 @@
+<!-- na terminal poñemonos en 02-bases e escribimos na terminal vs
+  : ng g c heroes/hero , esto crea un componente novo, cos arquivos necesarios-->
+<!-- borrar un componente, delete e logo ir ó app.module  -->
+<!-- ponhemos un link bootstrap en index.html e cambianos o estilo -->
+<h1>{{name}}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{age}}</dd>
+
+  <td>Método:</td>
+<!--  {{ function()/ ou js rollo 2+2 }} -->
+  <dd>{{ getHeroDescription() }}</dd>
+
+  <td>Capitalizado:</td>
+  <!-- get, sen () -->
+  <dd>{{capitalizedName}}</dd>
+</dl>
+<!-- engadimos as clases do Bootstrap, cambialle o estilo, polo link q metemos no index.html
+mx-2 = marxe -->
+<!-- que destruya o boton unha vez usado -->
+<!--true=aaparece, false= desparece-->
+<button
+*ngIf="name !== 'Spiderman'"
+class="btn btn-primary mx-2"
+(click)="changeHero()">Cambiar nombre</button>
+
+<button
+*ngIf="age !== 27"
+class="btn btn-primary"
+(click)="changeAge()">Cambiar edad</button>
+<!-- resetea e aparece o orxinal cos botons -->
+<button
+class="btn btn-primary mx-2"
+(click)="resetForm()">Reset
+</button>
