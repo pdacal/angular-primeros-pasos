@@ -1,0 +1,15 @@
+<h1>DBZ Personajes</h1>
+<hr>
+<div class="row">
+  <div class="col">
+    <!-- escoitar o metodo de list onDelete(list) -->
+    <!-- enlaza onDelete(list)HIJO, que trai o index, con onDeleteCharacter(main-page)PADRE, que o usa pa borrar certo index -->
+    <dbz-list [CharacterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-list>
+  </div>
+  <div class="col">
+    <!-- os componentes personalizados poden emitir valores, neste caso, un character -->
+    <!-- (onNewCharacter esta no form.ts, o outro esta np main.ts -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+
+</div>

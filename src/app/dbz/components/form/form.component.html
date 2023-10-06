@@ -1,0 +1,17 @@
+<h4>Agregar personaje</h4>
+<!-- click no boton submit -->
+<!-- () = eventos, [] = atributos, click e manda o introfucito no formulario -->
+<form class="row" (ngSubmit)="emitCharacter()">
+  <input
+    type="text" name="name" [(ngModel)]="character.name"
+    class="form-control mb-2" placeholder="Nombre">
+
+  <input
+    type="text" name="power" [(ngModel)]="character.power"
+    class="form-control mb-2" placeholder="Poder">
+
+  <button type="submit" class="btn btn-primary" >Agregar</button>
+  <!-- asi mostra o obxeto coma o queremos ver!!! -->
+  <!-- <pre>{{character | json}}</pre> -->
+</form>
+<!-- ngModel daba erro ata que importei FormsModule e ngModel tanto en dbz.module.ts coma en app.module.ts -->

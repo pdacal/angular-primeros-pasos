@@ -1,0 +1,26 @@
+<h4>Listado</h4>
+<ul class="list-group">
+  <!-- no class van clases de Bootstrap para modificar o aspecto dos obxetos -->
+  <li
+    *ngFor="
+    let character of CharacterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven = even;
+    let isOdd = odd;
+    "
+
+    class="list-group-item d-flex justify-content-between align-items-center"
+    [ngClass]="{
+      'list-group-item-dark': isLast,
+      'list-group-item-primary': isEven
+    }">
+    <div>
+      <span class="text-primary">{{i+1}}. </span>
+      <span>{{ character.name }}</span> -<strong> power:</strong> {{ character.power }}
+    </div>
+    <!-- enlaza co metodo en list.component -->
+    <button class="btn btn-danger" (click)="onDeleteCharacter(character.id)">X</button>
+  </li>
+</ul>
